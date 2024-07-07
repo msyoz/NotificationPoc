@@ -1,0 +1,40 @@
+﻿apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: binding-notification-input
+spec:
+  type: bindings.rabbitmq
+  version: v1
+  metadata:
+  - name: queueName
+    value: "binding-notification"
+  - name: host
+    value: "amqp://guest:guest@localhost:5672"
+  - name: durable
+    value: "true"
+  # - name: deleteWhenUnused
+  #   value: "false"
+  # - name: ttlInSeconds
+  #   value: "60"
+  # - name: prefetchCount
+  #   value: "0"
+  # - name: exclusive
+  #   value: "false"
+  # - name: maxPriority
+  #   value: "5"
+  # - name: contentType
+  #   value: "text/plain"
+  # - name: reconnectWaitInSeconds
+  #   value: "5"
+  # - name: externalSasl
+  #   value: "false"
+  # - name: caCert
+  #   value: "null"
+  # - name: clientCert
+  #   value: "null"
+  # - name: clientKey
+  #   value: "null"
+  - name: direction 
+    value: "input"
+scopes:
+- notificationservice    
