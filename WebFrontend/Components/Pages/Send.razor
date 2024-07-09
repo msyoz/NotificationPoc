@@ -1,6 +1,7 @@
 ﻿@page "/send"
 @rendermode InteractiveServer
 @using NotificationPoc.ServiceDefaults.DTOs
+@inject SendApiClient sendApiClient
 
 <PageTitle>Send Notification</PageTitle>
 
@@ -46,9 +47,10 @@
         set => notificationInput.Recipients = value.Split(',', StringSplitOptions.RemoveEmptyEntries);
     }
 
-    private void HandleValidSubmit()
+    private async Task HandleValidSubmit()
     {
         // Handle the form submission here
+        await sendApiClient.Send(notificationInput);
         Console.WriteLine("Form submitted successfully.");
     }
 }

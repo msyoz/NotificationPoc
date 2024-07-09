@@ -20,6 +20,7 @@ namespace OtherService.Controllers
         public IActionResult Send([FromBody] NotificationMessageSendingInput input)
         {
             daprClient.InvokeBindingAsync("binding-notification-output", "create", input);
+            Console.WriteLine("Notification sent!");
             return Ok();
         }
     }
