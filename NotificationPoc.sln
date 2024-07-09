@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService", "NotificationService\NotificationService.csproj", "{1A5DF12D-8F04-47D2-808E-020B066A65AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationPoc.AppHost", "NotificationPoc.AppHost\NotificationPoc.AppHost.csproj", "{64239AD0-E262-4B63-B2A5-C942E3E792E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationPoc.AppHost", "NotificationPoc.AppHost\NotificationPoc.AppHost.csproj", "{64239AD0-E262-4B63-B2A5-C942E3E792E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationPoc.ServiceDefaults", "NotificationPoc.ServiceDefaults\NotificationPoc.ServiceDefaults.csproj", "{D4930216-1495-4C41-8BE5-3E51E9525F03}"
 EndProject

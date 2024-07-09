@@ -1,0 +1,54 @@
+﻿@page "/send"
+@rendermode InteractiveServer
+@using NotificationPoc.ServiceDefaults.DTOs
+
+<PageTitle>Send Notification</PageTitle>
+
+<h3>Send Notification</h3>
+
+<EditForm Model="@notificationInput" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="type">Type:</label>
+        <InputText id="type" class="form-control" @bind-Value="notificationInput.Type" />
+    </div>
+
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <InputText id="title" class="form-control" @bind-Value="notificationInput.Title" />
+    </div>
+
+    <div class="form-group">
+        <label for="body">Body:</label>
+        <InputTextArea id="body" class="form-control" @bind-Value="notificationInput.Body" />
+    </div>
+
+    <div class="form-group">
+        <label for="recipients">Recipients (comma-separated):</label>
+        <InputText id="recipients" class="form-control" @bind-Value="@recipientsText" />
+    </div>
+
+    <div class="form-group">
+        <label for="appId">App ID:</label>
+        <InputText id="appId" class="form-control" @bind-Value="notificationInput.AppId" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@code {
+    private NotificationMessageSendingInput notificationInput = new();
+    private string recipientsText
+    {
+        get => string.Join(",", notificationInput.Recipients);
+        set => notificationInput.Recipients = value.Split(',', StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    private void HandleValidSubmit()
+    {
+        // Handle the form submission here
+        Console.WriteLine("Form submitted successfully.");
+    }
+}

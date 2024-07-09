@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace NotificationPoc.ServiceDefaults.DTOs
 {
-    public record NotificationMessageSendingInput
+    public class NotificationMessageSendingInput
     {
-        public required string Type { get; init; }
-        public required string Title { get; init; }
-        public required string Body { get; init; }
-        public required string[] Recipients { get; init; }
-        public required string AppId { get; init; }
+        public string Type { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public string[] Recipients { get; set; } = Array.Empty<string>();
+        public string AppId { get; set; }
     }
 }
