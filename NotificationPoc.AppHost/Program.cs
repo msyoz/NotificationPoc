@@ -11,6 +11,7 @@ var apiService = builder.AddProject<Projects.OtherService>("apiservice")
     .WithDaprSidecar(new DaprSidecarOptions { ResourcesPaths = ImmutableHashSet.Create("./DaprComponents") });
 
 builder.AddProject<Projects.WebFrontend>("webfrontend")
+    .WithExternalHttpEndpoints()
     .WithReference(apiService);
 
 builder.Build().Run();

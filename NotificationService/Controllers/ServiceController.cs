@@ -6,7 +6,6 @@ using System.Text;
 
 namespace NotificationService.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class ServiceController : ControllerBase
     {
